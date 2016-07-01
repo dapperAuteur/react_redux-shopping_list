@@ -3,7 +3,13 @@ import ReactDOM from 'react-dom';
 
 import { fromJS } from 'immutable';
 
-import App from './components/app';
+import { App } from './components/app';
+//
+
+import {createStore} from 'redux';
+import { Provider } from 'react-redux';
+
+import { reducer } from './reducer';
 
 require('./css/main.scss');
 
@@ -12,34 +18,37 @@ const initialState = fromJS({
     items: [
         {
             id: 1,
-            name: 'Carrots',
+            item: 'Carrots',
             quantity: 2,
             purchased: true,
         },
         {
             id: 2,
-            name: 'Greek Yogurt',
+            item: 'Greek Yogurt',
             quantity: 1,
             purchased: true,
         },
         {
             id: 3,
-            name: 'Almond Milk',
+            item: 'Almond Milk',
             quantity: '1 gallon',
             purchased: false,
         },
         {
             id: 4,
-            name: 'Egg Whites',
+            item: 'Egg Whites',
             quantity: '2 dozen',
             purchased: false,
         }
     ]
 });
 
+const store = createStore(reducer, initialState, window.devToolsExtension ? window.devToolsExtension() : undefined);
 
 
 ReactDOM.render(
-    <App state={initialState} />,
+    <Provider store={store}>
+        <App name="Shopping List" />
+    </Provider>,
     document.getElementById('app')
 );

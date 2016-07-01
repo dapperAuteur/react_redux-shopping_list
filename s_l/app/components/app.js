@@ -1,20 +1,22 @@
 import React from 'react';
-import { ShoppingList } from './shopping_list';
+import { ShoppingListContainer } from './shopping_list';
+import { AddItem, ShoppingListFormContainer } from './shopping_list_form';
 
-export default class App extends React.Component {
+export class App extends React.Component {
     // render() and everything inside it is the App component
     render() {
         return (
             <div className="app">
-                <h1>Hello, world!</h1>
                 <div className="shopping-list">
+                    <h2>{ this.props.name }</h2>
                 
-                    <ShoppingList name={ this.props.state.get('name') } //name ShoppingList component taken from initialState object
+                    <ShoppingListContainer name={ this.props.item } //item ShoppingList component taken from initialState object
                     // gets the 'items' out of the state
-                        items={ this.props.state.get('items') }/>
+                        items={ this.props.items }/>
                 </div>
-                <div className="item">
-                    
+                <div className="shopping_list_form">
+                    <h1>{ this.props.form }</h1>
+                    <ShoppingListFormContainer />
                 </div>
             </div>
             );
