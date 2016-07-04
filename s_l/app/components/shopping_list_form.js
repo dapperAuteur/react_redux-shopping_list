@@ -13,6 +13,12 @@ let AddItem = ({ dispatch }) => {
                 if (!inputItem.value.trim()) {
                     return;
                 }
+                // ref.on("child_added", function(dataSnapshot) {
+                //     this.items.push(dataSnapshot.val());
+                //     this.setState({
+                //       items: this.items
+                //     });
+                //   }.bind(this));
                 dispatch(addItem(inputItem.value, inputQuantity.value));
                 inputItem.value = '';
                 inputQuantity.value = '';

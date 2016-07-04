@@ -13,6 +13,9 @@ import { reducer } from './reducer';
 
 require('./css/main.scss');
 
+import firebase from 'firebase';
+
+
 const initialState = fromJS({
     name: 'Groceries',
     items: [
@@ -41,8 +44,21 @@ const initialState = fromJS({
             purchased: false,
         }
     ]
-});
-
+})
+// var initialState;
+// var config = {
+//     apiKey: "AIzaSyBOxxxEKosT5Gu98rD9LqDNOWOlJOs4D2E",
+//     authDomain: "react-shopping-list.firebaseapp.com",
+//     databaseURL: "https://react-shopping-list.firebaseio.com",
+//     storageBucket: "react-shopping-list.appspot.com",
+// };
+// firebase.initializeApp(config);
+// var rootRef = firebase.database().ref();
+// rootRef.once("value")
+//   .then(function(snapshot) {
+//     initialState = snapshot.val();
+//     // console.log(initialState);
+//   });
 const store = createStore(reducer, initialState, window.devToolsExtension ? window.devToolsExtension() : undefined);
 
 

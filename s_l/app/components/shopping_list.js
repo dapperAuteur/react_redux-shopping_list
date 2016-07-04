@@ -5,7 +5,9 @@ import { ItemContainer } from './item';
 
 export class ShoppingList extends React.Component {
     // render() and everything inside it is ShoppingList component
+
     render() {
+        console.log(this.props.items);
         return (
             <div className="shopping-list">
                 
