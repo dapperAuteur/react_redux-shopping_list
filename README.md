@@ -1,4 +1,7 @@
-
+#Code Eloquent.ly ReactJS Shopping List tutorial
+###The app is connected to Firebase.
+#####You may visit and test the app at https://react-shopping-list.firebaseapp.com/
+#####I'd like to connect this app to the React ToDo app created and test if they may be combined into one app while being hosted on two separate Firebase projects.
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
